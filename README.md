@@ -1,5 +1,17 @@
 ## Description
 Proyecto de Veterinaria API REST realizado con [NestJS](https://nestjs.com/)
+(PROYECTO EN PROGRESO)
+
+
+### ENDPOINTS
+#### Mascotas
+- GET /pets?q=`:param` (Obtener todas las mascotas, pudiendo filtrar por usuario, raza, genero o nombre)
+- GET /pets/:id (Obtener una mascota por su `:id`)
+- POST /pets (Registrar una nueva mascota)
+
+#### Usuarios
+- POST /users/register (Registrarse como usuario)
+- POST /users/login (Ingresar con tus credenciales de usuario)
 
 ## Project setup
 ```bash
