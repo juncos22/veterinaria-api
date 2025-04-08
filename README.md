@@ -1,5 +1,5 @@
 ## Description
-Proyecto de Veterinaria API REST realizado con [Nest](https://github.com/nestjs/nest)
+Proyecto de Veterinaria API REST realizado con [NestJS](https://nestjs.com/)
 
 ## Project setup
 ```bash
