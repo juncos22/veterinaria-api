@@ -1,7 +1,7 @@
 import { User } from "src/user/user.entity";
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
-import { Breed } from "./breed.entity";
-import { Gender } from "./gender.entity";
+import { Breed } from "../breeds/entities/breed.entity";
+import { Gender } from "../entities/gender.entity";
 
 @Entity()
 export class Pet {

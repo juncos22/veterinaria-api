@@ -11,5 +11,4 @@ export type PetList = {
     owner: string;
     breed: string;
     gender: string;
-    medication: string;
 }

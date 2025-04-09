@@ -1,6 +1,6 @@
 
 import { DataSource } from 'typeorm';
-import { Pet } from './pet.entity';
+import { Pet } from '../entities/pet.entity';
 
 export const petProviders = [
     {

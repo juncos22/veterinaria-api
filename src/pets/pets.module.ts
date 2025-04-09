@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { PetController } from './pet.controller';
+import { PetController } from './controllers/pet.controller';
 import { DatabaseModule } from 'src/database/database.module';
-import { PetService } from './pet.service';
-import { petProviders } from './pet.provider';
+import { PetService } from './services/pet.service';
+import { petProviders } from './providers/pet.provider';
 
 @Module({
   imports: [DatabaseModule],

@@ -36,3 +36,17 @@ Content-Type: application/json
   "name": "Medication #4422",
   "petId": 2
 }
+
+### Get Pet's Medications
+GET {{baseUri}}/medications?petName=Loki HTTP/1.1 
+
+### Get Breeds
+GET {{baseUri}}/breeds HTTP/1.1 
+
+### Save Breed
+POST {{baseUri}}/breeds HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Gato Siamés"
+}

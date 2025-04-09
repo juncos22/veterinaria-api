@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
-import { PetService } from './pet.service';
-import { CreatePetDto } from './pet.dto';
+import { PetService } from '../services/pet.service';
+import { CreatePetDto, PetList } from '../dtos/pet.dto';
 
 @Controller('pets')
 export class PetController {
@@ -8,8 +8,7 @@ export class PetController {
 
     @Get('')
     async findAll(@Query('q') q?: string) {
-        console.log("Owner:", q);
-
+        // console.log("Owner:", q);
         return q ? await this.petService.findAll(q)
             : await this.petService.getAll();
     }

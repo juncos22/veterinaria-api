@@ -1,4 +1,4 @@
-import { Pet } from "../pets/pet.entity";
+import { Pet } from "../pets/entities/pet.entity";
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
 
 @Entity()
