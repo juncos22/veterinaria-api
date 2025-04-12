@@ -15,7 +15,7 @@ export class UserService {
         });
     }
 
-    findOne(email: string) {
-        return this.userRepository.findOneBy({ email })
+    findOne(username: string) {
+        return this.userRepository.findOneBy({ name: username })
     }
 }

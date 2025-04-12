@@ -1,6 +1,7 @@
-import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query, UseGuards } from '@nestjs/common';
 import { PetService } from '../services/pet.service';
 import { CreatePetDto, PetList } from '../dtos/pet.dto';
+import { UserGuard } from 'src/user/user.guard';
 
 @Controller('pets')
 export class PetController {
@@ -13,6 +14,7 @@ export class PetController {
             : await this.petService.getAll();
     }
 
+    @UseGuards(UserGuard)
     @Post()
     async create(@Body() newPet: CreatePetDto) {
         return this.petService.create(newPet)

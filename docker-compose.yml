@@ -23,5 +23,6 @@ services:
       DB_USERNAME: root
       DB_PASSWORD: 12345
       DB_DATABASE: veterinary
+      SECRET_TOKEN: BYtUf9lgt+qw4PVnsC0R1g==
 volumes:
   mysql-data:

@@ -4,26 +4,36 @@
 GET {{baseUri}}/pets HTTP/1.1 
 
 ### Get One Pet by ID
-GET {{baseUri}}/pets/14 HTTP/1.1
+GET {{baseUri}}/pets/18 HTTP/1.1
 
 ### Register user
 POST {{baseUri}}/users/register HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "User 3",
-  "email": "user3@gmail.com",
-  "password": "user3password"
+  "name": "Nicolas Juncos",
+  "email": "nicolas.juncos@gmail.com",
+  "password": "encryptedpassword"
+}
+
+### Login user
+POST {{baseUri}}/users/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Nicolas Juncos",
+  "password": "encryptedpassword"
 }
 
 
 ### Register Pet
 POST {{baseUri}}/pets HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoiTmljb2xhcyBKdW5jb3MiLCJpYXQiOjE3NDQ0ODE5MTV9.R4Z_bkayxqzB1xQEuPEEppZiqezQfrRT1WgciCf7JkY
 
 {
   "name": "Collarcito",
-  "ownerId": 1,
+  "ownerId": 6,
   "breedId": 2,
   "genderId": 1
 }
@@ -31,14 +41,18 @@ Content-Type: application/json
 ### Register Medication
 POST {{baseUri}}/medications HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoiTmljb2xhcyBKdW5jb3MiLCJpYXQiOjE3NDQ0ODE5MTV9.R4Z_bkayxqzB1xQEuPEEppZiqezQfrRT1WgciCf7JkY
 
 {
   "name": "Medication #4422",
-  "petId": 2
+  "petId": 18
 }
 
 ### Get Pet's Medications
-GET {{baseUri}}/medications?petName=Loki HTTP/1.1 
+GET {{baseUri}}/medications?petName=Collarcito HTTP/1.1 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoiTmljb2xhcyBKdW5jb3MiLCJpYXQiOjE3NDQ0ODE5MTV9.R4Z_bkayxqzB1xQEuPEEppZiqezQfrRT1WgciCf7JkY
+
 
 ### Get Breeds
 GET {{baseUri}}/breeds HTTP/1.1 
