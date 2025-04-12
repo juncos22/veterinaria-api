@@ -1,8 +1,8 @@
 FROM node:20.13.1-alpine
 WORKDIR /app
 COPY package.json .
-RUN pnpm install
+RUN npm install
 COPY . .
-RUN pnpm run build
-CMD ["pnpm", "run", "start"]
+RUN npm run build
+CMD ["npm", "run", "start"]
 EXPOSE 3001
