@@ -1,4 +1,4 @@
-@baseUri=http://localhost:3000
+@baseUri=http://localhost:3001
 
 ### Get All Pets
 GET {{baseUri}}/pets HTTP/1.1 
@@ -11,9 +11,9 @@ POST {{baseUri}}/users/register HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "Nicolas Juncos",
-  "email": "nicolas.juncos@gmail.com",
-  "password": "encryptedpassword"
+  "name": "Roberto Perez",
+  "email": "roberto.perez@gmail.com",
+  "password": "encryptedpassword2"
 }
 
 ### Login user
@@ -29,7 +29,6 @@ Content-Type: application/json
 ### Register Pet
 POST {{baseUri}}/pets HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoiTmljb2xhcyBKdW5jb3MiLCJpYXQiOjE3NDQ0ODE5MTV9.R4Z_bkayxqzB1xQEuPEEppZiqezQfrRT1WgciCf7JkY
 
 {
   "name": "Collarcito",
