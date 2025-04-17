@@ -11,9 +11,9 @@ POST {{baseUri}}/users/register HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "Roberto Perez",
-  "email": "roberto.perez@gmail.com",
-  "password": "encryptedpassword2"
+  "name": "Sasha Martinez",
+  "email": "sasha.martinez@gmail.com",
+  "password": "encryptedpassword3"
 }
 
 ### Login user
@@ -21,20 +21,21 @@ POST {{baseUri}}/users/login HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "Nicolas Juncos",
-  "password": "encryptedpassword"
+  "email": "roberto.perez@gmail.com",
+  "password": "encryptedpassword2"
 }
 
 
 ### Register Pet
 POST {{baseUri}}/pets HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoiU2FzaGEgTWFydGluZXoiLCJpYXQiOjE3NDQ4NDU4Nzh9.hUfgufz0ArmSIb_22v9WQ-S3Lel6aJR3-dUsQkQX_b4
 
 {
-  "name": "Collarcito",
-  "ownerId": 6,
-  "breedId": 2,
-  "genderId": 1
+  "name": "Kira",
+  "ownerId": 2,
+  "breedId": 4,
+  "genderId": 2
 }
 
 ### Register Medication

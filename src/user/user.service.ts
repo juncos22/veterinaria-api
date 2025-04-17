@@ -5,17 +5,19 @@ import { CreateUserDto } from './user.dto';
 
 @Injectable()
 export class UserService {
-    constructor(@Inject('USER_REPOSITORY') private userRepository: Repository<User>) { }
+  constructor(
+    @Inject('USER_REPOSITORY') private userRepository: Repository<User>,
+  ) {}
 
-    register(newUser: CreateUserDto) {
-        return this.userRepository.save({
-            name: newUser.name,
-            email: newUser.email,
-            password: newUser.password
-        });
-    }
+  register(newUser: CreateUserDto) {
+    return this.userRepository.save({
+      name: newUser.name,
+      email: newUser.email,
+      password: newUser.password,
+    });
+  }
 
-    findOne(username: string) {
-        return this.userRepository.findOneBy({ name: username })
-    }
+  findOne(email: string) {
+    return this.userRepository.findOneBy({ email: email });
+  }
 }
