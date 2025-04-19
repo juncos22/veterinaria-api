@@ -28,7 +28,7 @@ export class UserController {
     const token = await this.jwtService.signAsync(payload, {
       secret: process.env.SECRET_TOKEN,
     });
-    return { email: result.email, name: result.name, token };
+    return { id: result.id, email: result.email, name: result.name, token };
   }
 
   @Post('login')
@@ -47,6 +47,6 @@ export class UserController {
     const token = await this.jwtService.signAsync(payload, {
       secret: process.env.SECRET_TOKEN,
     });
-    return { email: result.email, name: result.name, token };
+    return { id: result.id, email: result.email, name: result.name, token };
   }
 }
