@@ -18,38 +18,33 @@ export class PetService {
       breed: {
         id: pet.breedId,
       },
-      gender: {
-        id: pet.genderId,
-      },
+      gender: pet.genderId,
     });
   }
 
   findAll(data: string): Promise<PetList[]> {
     return this.petRepository
-      .query(`SELECT p.id, p.name as pet, g.name as gender, b.name as breed, o.name as owner
-        FROM pet p LEFT JOIN user o ON p.ownerId = o.id
-        LEFT JOIN gender g on g.id = p.genderId
+      .query(`SELECT p.id, p.name as pet, p.gender, b.name as breed, o.fullName as owner
+        FROM pet p LEFT JOIN owner o ON p.ownerId = o.id
         LEFT JOIN breed b ON b.id = p.breedId
-        WHERE o.name LIKE '%${data}%'  
+        WHERE o.fullName LIKE '%${data}%'  
         OR p.name LIKE '%${data}%' 
-        OR g.name LIKE '%${data}%' 
+        OR p.gender LIKE '%${data}%' 
         OR b.name LIKE '%${data}%';`);
   }
 
   getAll(): Promise<PetList[]> {
     return this.petRepository
-      .query(`SELECT p.id, p.name as pet, g.name as gender, b.name as breed, o.name as owner
-        FROM pet p LEFT JOIN user o ON p.ownerId = o.id
-        LEFT JOIN gender g on g.id = p.genderId
+      .query(`SELECT p.id, p.name as pet, p.gender, b.name as breed, o.fullName as owner
+        FROM pet p LEFT JOIN owner o ON p.ownerId = o.id
         LEFT JOIN breed b ON b.id = p.breedId
-        WHERE active = true;`);
+        WHERE p.active = true;`);
   }
 
   findOne(id: number): Promise<PetList> {
     return this.petRepository
-      .query(`SELECT p.id, p.name as pet, g.name as gender, b.name as breed, o.name as owner
-        FROM pet p LEFT JOIN user o ON p.ownerId = o.id
-        LEFT JOIN gender g on g.id = p.genderId
+      .query(`SELECT p.id, p.name as pet, p.gender, b.name as breed, o.fullName as owner
+        FROM pet p LEFT JOIN owner o ON p.ownerId = o.id
         LEFT JOIN breed b ON b.id = p.breedId
         WHERE p.active = true AND p.id = ${id};`);
   }

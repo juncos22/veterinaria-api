@@ -79,3 +79,16 @@ Content-Type: application/json
 {
   "name": "Gato Siamés"
 }
+
+### GET all owners
+GET {{baseUri}}/owners HTTP/1.1
+
+### Save an owner
+POST {{baseUri}}/owners HTTP/1.1
+Content-Type: application/json
+
+{
+  "fullName": "Maria Perez González",
+  "phone": "+54 36621722722",
+  "address": "Calle Falsa 123"
+}

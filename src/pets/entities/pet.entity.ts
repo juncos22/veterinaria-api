@@ -1,7 +1,6 @@
-import { User } from 'src/user/user.entity';
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
 import { Breed } from '../breeds/entities/breed.entity';
-import { Gender } from '../entities/gender.entity';
+import { Owner } from 'src/owners/owner.entity';
 
 @Entity()
 export class Pet {
@@ -11,14 +10,14 @@ export class Pet {
   @Column()
   name: string;
 
-  @ManyToOne(() => User, (user) => user.id)
-  owner: User;
+  @ManyToOne(() => Owner, (owner) => owner.id)
+  owner: Owner;
 
   @ManyToOne(() => Breed, (breed) => breed.id)
   breed: Breed;
 
-  @ManyToOne(() => Gender, (gender) => gender.id)
-  gender: Gender;
+  @Column()
+  gender: string;
 
   @Column({
     type: 'boolean',
