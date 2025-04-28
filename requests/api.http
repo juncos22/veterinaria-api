@@ -1,4 +1,4 @@
-@baseUri=http://localhost:3001
+@baseUri=http://localhost:3000
 
 ### Get All Pets
 GET {{baseUri}}/pets HTTP/1.1 
@@ -35,7 +35,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuY
   "name": "Pepe",
   "ownerId": 2,
   "breedId": 4,
-  "genderId": 2
+  "gender": "M"
 }
 
 ### Update pet

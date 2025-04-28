@@ -2,7 +2,7 @@ export class CreatePetDto {
   name: string;
   ownerId: number;
   breedId: number;
-  genderId: string;
+  gender: string;
 }
 
 export type PetList = {
@@ -11,6 +11,9 @@ export type PetList = {
   owner: string;
   breed: string;
   gender: string;
+
+  breedId: number;
+  ownerId: number;
 };
 
 export class UpdatePetDto {

@@ -18,7 +18,7 @@ export class PetService {
       breed: {
         id: pet.breedId,
       },
-      gender: pet.genderId,
+      gender: pet.gender,
     });
   }
 
@@ -43,7 +43,7 @@ export class PetService {
 
   findOne(id: number): Promise<PetList> {
     return this.petRepository
-      .query(`SELECT p.id, p.name as pet, p.gender, b.name as breed, o.fullName as owner
+      .query(`SELECT p.id, p.name as pet, p.gender, b.id as breedId, b.name as breed, o.id as ownerId, o.fullName as owner
         FROM pet p LEFT JOIN owner o ON p.ownerId = o.id
         LEFT JOIN breed b ON b.id = p.breedId
         WHERE p.active = true AND p.id = ${id};`);
