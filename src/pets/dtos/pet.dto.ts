@@ -22,3 +22,15 @@ export class UpdatePetDto {
   breedId?: number;
   genderId?: string;
 }
+
+export class PetResponse {
+  success: boolean;
+  message?: string;
+  data?: PetList | PetList[];
+
+  constructor(success: boolean, message?: string, data?: PetList | PetList[]) {
+    this.success = success;
+    this.message = message;
+    this.data = data;
+  }
+}

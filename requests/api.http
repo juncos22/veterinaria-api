@@ -21,8 +21,8 @@ POST {{baseUri}}/users/login HTTP/1.1
 Content-Type: application/json
 
 {
-  "email": "roberto.perez@gmail.com",
-  "password": "encryptedpassword2"
+  "email": "sasha.martinez@gmail.com",
+  "password": "encryptedpassword3"
 }
 
 
@@ -60,11 +60,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuY
 
 {
   "name": "Medication #4422",
-  "petId": 18
+  "petId": 4
 }
 
 ### Get Pet's Medications
-GET {{baseUri}}/medications?petName=Collarcito HTTP/1.1 
+GET {{baseUri}}/medications?petName=Pepe HTTP/1.1 
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoiTmljb2xhcyBKdW5jb3MiLCJpYXQiOjE3NDQ0ODE5MTV9.R4Z_bkayxqzB1xQEuPEEppZiqezQfrRT1WgciCf7JkY
 
@@ -75,20 +75,24 @@ GET {{baseUri}}/breeds HTTP/1.1
 ### Save Breed
 POST {{baseUri}}/breeds HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoiTmljb2xhcyBKdW5jb3MiLCJpYXQiOjE3NDQ0ODE5MTV9.R4Z_bkayxqzB1xQEuPEEppZiqezQfrRT1WgciCf7JkY
 
 {
-  "name": "Gato Siamés"
+  "name": "Breed test"
 }
 
 ### GET all owners
 GET {{baseUri}}/owners HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoiTmljb2xhcyBKdW5jb3MiLCJpYXQiOjE3NDQ0ODE5MTV9.R4Z_bkayxqzB1xQEuPEEppZiqezQfrRT1WgciCf7JkY
 
 ### Save an owner
 POST {{baseUri}}/owners HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoiTmljb2xhcyBKdW5jb3MiLCJpYXQiOjE3NDQ0ODE5MTV9.R4Z_bkayxqzB1xQEuPEEppZiqezQfrRT1WgciCf7JkY
+
 
 {
-  "fullName": "Maria Perez González",
-  "phone": "+54 36621722722",
+  "fullName": "Owner test",
+  "phone": "+44 2222222",
   "address": "Calle Falsa 123"
 }
