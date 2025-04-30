@@ -27,10 +27,10 @@ export class PetService {
       .query(`SELECT p.id, p.name as pet, p.gender, b.name as breed, o.fullName as owner
         FROM pet p LEFT JOIN owner o ON p.ownerId = o.id
         LEFT JOIN breed b ON b.id = p.breedId
-        WHERE o.fullName LIKE '%${data}%'  
+        WHERE p.active = true AND (o.fullName LIKE '%${data}%'  
         OR p.name LIKE '%${data}%' 
         OR p.gender LIKE '%${data}%' 
-        OR b.name LIKE '%${data}%';`);
+        OR b.name LIKE '%${data}%');`);
   }
 
   getAll(): Promise<PetList[]> {
