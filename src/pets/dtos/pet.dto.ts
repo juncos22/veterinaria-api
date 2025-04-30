@@ -1,3 +1,5 @@
+import { MedicationDTO } from 'src/medications/medication.dto';
+
 export class CreatePetDto {
   name: string;
   ownerId: number;
@@ -14,6 +16,8 @@ export type PetList = {
 
   breedId: number;
   ownerId: number;
+
+  medications: MedicationDTO[];
 };
 
 export class UpdatePetDto {

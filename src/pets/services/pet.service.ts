@@ -41,12 +41,35 @@ export class PetService {
         WHERE p.active = true;`);
   }
 
-  findOne(id: number): Promise<PetList> {
-    return this.petRepository
-      .query(`SELECT p.id, p.name as pet, p.gender, b.id as breedId, b.name as breed, o.id as ownerId, o.fullName as owner
-        FROM pet p LEFT JOIN owner o ON p.ownerId = o.id
-        LEFT JOIN breed b ON b.id = p.breedId
+  async findOne(id: number): Promise<PetList> {
+    let petData: PetList = {
+      breed: '',
+      breedId: 0,
+      gender: '',
+      id: 0,
+      owner: '',
+      ownerId: 0,
+      pet: '',
+      medications: [],
+    };
+    let result = await this.petRepository
+      .query(`SELECT p.id, p.name as pet, b.id as breedId, b.name as breed, p.gender, o.fullName as owner, o.id as ownerId, m.id as medicationId, m.name as medication
+        FROM pet p 
+        INNER JOIN breed b ON b.id = p.breedId
+        INNER JOIN owner o ON o.id = p.ownerId
+        LEFT JOIN medication m ON p.id = m.petId
         WHERE p.active = true AND p.id = ${id};`);
+
+    // console.log(result);
+
+    const { medicationId, medication, ...rest } = result ? result[0] : {};
+    petData = { ...rest };
+    // console.log(result);
+    petData.medications = result.map((r) => ({
+      id: r.medicationId,
+      name: r.medication,
+    }));
+    return petData;
   }
 
   async update(id: number, pet: UpdatePetDto): Promise<boolean> {

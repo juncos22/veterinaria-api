@@ -4,7 +4,7 @@
 GET {{baseUri}}/pets HTTP/1.1 
 
 ### Get One Pet by ID
-GET {{baseUri}}/pets/5 HTTP/1.1
+GET {{baseUri}}/pets/14 HTTP/1.1
 
 ### Register user
 POST {{baseUri}}/users/register HTTP/1.1
