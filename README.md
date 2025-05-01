@@ -1,7 +1,7 @@
 ## Description
 
 Proyecto de Veterinaria API REST realizado con [NestJS](https://nestjs.com/)
-(PROYECTO EN PROGRESO)
+(MVP FINALIZADO)
 
 ## Funcionalidades
 
